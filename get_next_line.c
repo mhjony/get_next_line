@@ -6,11 +6,21 @@
 /*   By: jony <jony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:38:30 by mhasan            #+#    #+#             */
-/*   Updated: 2019/12/14 16:12:52 by jony             ###   ########.fr       */
+/*   Updated: 2019/12/15 19:24:06 by jony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+int ft_return(char **stack, int n, char **line)
+{
+	if (n < 0)
+		return (-1);
+	else if (n == 0 && (*stack) == NULL)
+		return (0);
+	else
+		return (search_nline(stack, line));
+}
 
 int get_next_line(const int fd, char **line)
 {
