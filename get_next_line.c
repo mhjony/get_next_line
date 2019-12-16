@@ -6,11 +6,36 @@
 /*   By: jony <jony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:38:30 by mhasan            #+#    #+#             */
-/*   Updated: 2019/12/15 19:24:06 by jony             ###   ########.fr       */
+/*   Updated: 2019/12/16 23:27:54 by jony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+int search_nline(char **stack, char **line)
+{
+	int len;
+	char *tmp;
+
+	len = 0;
+	while ((*stack)[len] != '\n' && (*stack)[len] != '\0')
+		len++;
+	if ((*stack)[len] == '\n')
+	{
+		*line = ft_strsub(*stack, 0, len);
+		tmp = ft_strdup(*stack + len + 1);
+		free(*stack);
+		*stack = tmp;
+		if (*stack[0] == '\0')
+			ft_strdel(stack);
+	}
+	else if ((*stack)[len] == '\0')
+	{
+		*line = ft_strdup(*stack);
+		ft_strdel(stack);
+	}
+	return (1);
+}
 
 int ft_return(char **stack, int n, char **line)
 {
