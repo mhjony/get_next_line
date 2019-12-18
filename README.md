@@ -25,3 +25,9 @@ standard output, from a redirection etc.
 function get_next_line and a macro that allows to choose the size of the reading
 buffer for the read function. This value will be modified during the defence to
 evaluate the strength of your function. That macro must be named BUFF_SIZE.
+
+To run this project:
+
+run: bash compile.sh
+
+run: ./test_gnl filename
