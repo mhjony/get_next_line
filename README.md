@@ -1,4 +1,5 @@
 #Goals_from_this_project
+
 I gained a deeper understanding of allocations, whether they happen on the
 stack memory or in the heap memory
 
